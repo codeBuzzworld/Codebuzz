@@ -1,147 +1,248 @@
-<form id="frmTemplateInfo" action="Post" data-parsley-validate="true">
+
+<form id="frmTemplate" action="Post" data-parsley-validate="true">
+
     @Html.AntiForgeryToken()
 
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="TemplateID" class="form-label">Template ID</label>
-                <input name="TemplateID" id="TemplateID" class="form-control" type="text" value="6311" disabled />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="Rev" class="form-label">Rev</label>
-                <input name="Rev" id="Rev" class="form-control" type="text" value="0" disabled />
-            </div>
-        </div>
-    </div>
+
 
     <div class="row mb-2">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="CreatedBy" class="form-label">Created By</label>
-                <input name="CreatedBy" id="CreatedBy" class="form-control" type="text" value="John Smith" disabled />
-            </div>
+
+        <div class="col-md-4">
+
+            <label for="txtTemplateId" class="form-label">Template ID</label>
+
+            <input type="text" id="txtTemplateId" name="TemplateId" class="form-control" readonly />
+
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="CreatedDate" class="form-label">Created Date</label>
-                <input name="CreatedDate" id="CreatedDate" class="form-control" type="text" value="5/10/2024" disabled />
-            </div>
+
+        <div class="col-md-4">
+
+            <label for="txtRev" class="form-label">Rev</label>
+
+            <input type="text" id="txtRev" name="Rev" class="form-control" readonly />
+
         </div>
+
+        <div class="col-md-4">
+
+            <label for="txtCreatedBy" class="form-label">Created By</label>
+
+            <input type="text" id="txtCreatedBy" name="CreatedBy" class="form-control" readonly />
+
+        </div>
+
     </div>
 
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="TemplateName" class="form-label">Template Name</label>
-                <input name="TemplateName" id="TemplateName" class="form-control" type="text" value="Test, X-X-X, CB" disabled />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="SystemDescription" class="form-label">System Description</label>
-                <input name="SystemDescription" id="SystemDescription" class="form-control" type="text" value="XXX" disabled />
-            </div>
-        </div>
-    </div>
+
 
     <div class="row mb-2">
+
+        <div class="col-md-4">
+
+            <label for="txtTemplateName" class="form-label">Template Name</label>
+
+            <input type="text" id="txtTemplateName" name="TemplateName" class="form-control" />
+
+        </div>
+
+        <div class="col-md-4">
+
+            <label for="txtSystemDesc" class="form-label">System Description</label>
+
+            <input type="text" id="txtSystemDesc" name="SystemDesc" class="form-control" />
+
+        </div>
+
+    </div>
+
+
+
+    <div class="row mb-2">
+
         <div class="col-md-12">
-            <div class="form-group">
-                <label for="WorkStage" class="form-label">Work Stage</label>
-                <select id="drpWorkStage" class="form-control custom-select" name="WorkStage" data-parsley-required="true">
-                    <option value="">Select Work Stage</option>
-                    <option value="Tape">Tape</option>
-                    <option value="Blast">Blast</option>
-                    <option value="Coating">Coating</option>
-                </select>
-            </div>
+
+            <ul class="nav nav-tabs">
+
+                <li class="nav-item">
+
+                    <a class="nav-link active" href="#specification">Specification</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#systeminfo">System Info</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#notes">Notes</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#documents">Documents</a>
+
+                </li>
+
+            </ul>
+
         </div>
+
     </div>
 
+
+
     <div class="row mb-2">
+
+        <div class="col-md-4">
+
+            <label for="drpWorkStage" class="form-label">Work Stage</label>
+
+            <select id="drpWorkStage" name="WorkStage" class="form-control">
+
+                <option value="">Select</option>
+
+                <!-- Add options here -->
+
+            </select>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <label for="txtProcessingInfo" class="form-label">Processing Information</label>
+
+            <input type="text" id="txtProcessingInfo" name="ProcessingInfo" class="form-control" />
+
+        </div>
+
+        <div class="col-md-4">
+
+            <label for="txtCalcIter" class="form-label">Calculation Iteration #</label>
+
+            <input type="text" id="txtCalcIter" name="CalcIter" class="form-control" />
+
+        </div>
+
+    </div>
+
+
+
+    <div class="row mb-2">
+
+        <div class="col-md-2">
+
+            <label for="txtSeq" class="form-label">Seq #</label>
+
+            <input type="text" id="txtSeq" name="Seq" class="form-control" />
+
+        </div>
+
+        <div class="col-md-2">
+
+            <label for="rwOption" class="form-label">R, W, or I</label>
+
+            <select id="drpRWOption" name="RWOption" class="form-control">
+
+                <option value="R">Read</option>
+
+                <option value="W">Write</option>
+
+                <option value="I">Invisible</option>
+
+            </select>
+
+        </div>
+
+        <div class="col-md-2">
+
+            <label for="btnAdd" class="form-label">&nbsp;</label>
+
+            <button type="button" id="btnAdd" class="btn btn-primary">Add</button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="row mb-4">
+
         <div class="col-md-12">
-            <div class="form-group">
-                <label for="ProcessingInfo" class="form-label">Processing Information</label>
-                <input name="ProcessingInfo" id="ProcessingInfo" class="form-control" type="text" />
-            </div>
+
+            <table class="table table-bordered">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Work Stage</th>
+
+                        <th>Processing Information</th>
+
+                        <th>Sub Info</th>
+
+                        <th>R, W, or I</th>
+
+                        <th>Calculation Iteration #</th>
+
+                        <th>Seq #</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td><select class="form-control"><option>Tape</option><option>Blast</option><option>Coating</option></select></td>
+
+                        <td><input type="text" class="form-control" value="Abrasive Blast" /></td>
+
+                        <td><button type="button" class="btn btn-secondary">Sub Info</button></td>
+
+                        <td><select class="form-control"><option>Read</option><option>Write</option><option>Invisible</option></select></td>
+
+                        <td><input type="text" class="form-control" value="1" /></td>
+
+                        <td><input type="text" class="form-control" value="123" /></td>
+
+                        <td>
+
+                            <button type="button" class="btn btn-sm btn-warning">Edit</button>
+
+                            <button type="button" class="btn btn-sm btn-danger">Delete</button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
         </div>
+
     </div>
+
+
 
     <div class="row mb-2">
-        <div class="col-md-12">
-            <label>R, W, or I</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="RWI" id="R" value="R" />
-                <label class="form-check-label" for="R">R</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="RWI" id="W" value="W" />
-                <label class="form-check-label" for="W">W</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="RWI" id="I" value="I" />
-                <label class="form-check-label" for="I">I</label>
-            </div>
-        </div>
-    </div>
 
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="CalcIteration" class="form-label">Calculation Iteration #</label>
-                <input name="CalcIteration" id="CalcIteration" class="form-control" type="number" />
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="SeqNo" class="form-label">Seq #</label>
-                <input name="SeqNo" id="SeqNo" class="form-control" type="number" />
-            </div>
-        </div>
-    </div>
-
-    <div class="row mb-3">
         <div class="col-md-12 text-right">
-            <button type="button" class="btn btn-primary" style="float: right;">Add</button>
-        </div>
-    </div>
 
-    <div class="table-responsive mb-3">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Work Stage</th>
-                    <th>Processing Information</th>
-                    <th>Sub Info</th>
-                    <th>R, W, or I</th>
-                    <th>Calculation Iteration #</th>
-                    <th>Seq #</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Tape</td>
-                    <td>Abrasive Blast</td>
-                    <td><button class="btn btn-warning btn-sm">Sub Info</button></td>
-                    <td>Invisible</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>
-                        <button class="btn btn-sm btn-primary">Edit</button>
-                        <button class="btn btn-sm btn-danger">Delete</button>
-                    </td>
-                </tr>
-                <!-- Additional rows can be added dynamically -->
-            </tbody>
-        </table>
-    </div>
-
-    <div class="row mb-3">
-        <div class="col-md-12 text-right">
             <button type="submit" class="btn btn-primary">Save</button>
+
+            <button type="reset" class="btn btn-secondary">Cancel</button>
+
         </div>
+
     </div>
+
 </form>
